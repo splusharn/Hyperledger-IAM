@@ -4,25 +4,25 @@
 
 namespace org.acme.mynetwork
 
-participant SampleParticipant identified by participantId {
-  o String participantId
+participant Person identified by uid {
+  o String uid
   o String firstName
   o String lastName
 }
 
-asset SampleAsset identified by assetId {
-  o String assetId
-  --> SampleParticipant owner
+asset Account identified by eruid {
+  o String eruid
+  --> Person owner
   o String value
 }
 
 transaction SampleTransaction {
-  --> SampleAsset asset
+  --> Account asset
   o String newValue
 }
 
 event SampleEvent {
-  --> SampleAsset asset
+  --> Account asset
   o String oldValue
   o String newValue
 }
