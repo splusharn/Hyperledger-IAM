@@ -19,25 +19,53 @@
 
 /**
  * Sample transaction
- * @param {org.acme.mynetwork.SampleTransaction} sampleTransaction
+ * @param {org.acme.mynetwork.AddGroupMembership} AddGroupMembership
  * @transaction
  */
-async function sampleTransaction(tx) {
-    // Save the old value of the asset.
-    const oldValue = tx.asset.value;
-
+async function AddGroupMembership(transaction) {
     // Update the asset with the new value.
-    tx.asset.value = tx.newValue;
+    transaction.accountId.memberOf.push(transaction.groupId);
+    transaction.groupId.members.push(transaction.accountId);
 
     // Get the asset registry for the asset.
-    const assetRegistry = await getAssetRegistry('org.acme.mynetwork.SampleAsset');
+    const accountRegistry = await getAssetRegistry('org.acme.mynetwork.Account');
+    const groupRegistry = await getAssetRegistry('org.acme.mynetwork.Group');
+    
     // Update the asset in the asset registry.
-    await assetRegistry.update(tx.asset);
+    await accountRegistry.update(transaction.groupId);
+    await groupRegistry.update(transaction.accountId);
 
     // Emit an event for the modified asset.
-    let event = getFactory().newEvent('org.acme.mynetwork', 'SampleEvent');
-    event.asset = tx.asset;
-    event.oldValue = oldValue;
-    event.newValue = tx.newValue;
+    let event = getFactory().newEvent('org.acme.mynetwork', 'Request');
+    event.personId = transaction.accountId.owner.uid;
+    event.accountId = transaction.accountId.eruid;
+    event.accountT = transaction.accountId.accountType;
+    event.description = "A membership was added to the account";
+    event.requestId = "1";
+    emit(event);
+}
+
+/**
+ * Create an account
+ * @param {org.acme.mynetwork.CreateAccount} CreateAccount
+ * @transaction
+ */
+async function CreateAccount(transaction) {
+    var account = getFactory().newResource(NS, 'Account', transaction.personId.uid);
+    account.type = transaction.type;
+    account.owner = transaction.personId;
+
+    if(!account.owner.accounts) {
+        account.owner.accounts = [];
+    }
+    account.owner.accounts.push(account);
+
+    // Emit an event for the modified asset.
+    let event = getFactory().newEvent('org.acme.mynetwork', 'Request');
+    event.personId = transaction.accountId.owner.uid;
+    event.accountId = transaction.accountId.eruid;
+    event.accountT = transaction.accountId.accountType;
+    event.description = "An account was added to the person";
+    event.requestId = "1";
     emit(event);
 }

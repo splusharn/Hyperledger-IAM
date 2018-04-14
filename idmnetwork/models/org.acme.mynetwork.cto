@@ -8,21 +8,43 @@ participant Person identified by uid {
   o String uid
   o String firstName
   o String lastName
+  --> Account[] accounts optional
+  o DateTime lastUpdate optional
+}
+
+enum AccountType {
+  o SLACK
+  o SERVICENOW
+  o ACTIVEDIRECTORY
 }
 
 asset Account identified by eruid {
   o String eruid
+  o AccountType type
+  o DateTime lastUpdate optional
+  --> Group[] memberOf
   --> Person owner
-  o String value
 }
 
-transaction SampleTransaction {
-  --> Account asset
-  o String newValue
+asset Group identified by groupName {
+  o String groupName
+  --> Account[] members
 }
 
-event SampleEvent {
-  --> Account asset
-  o String oldValue
-  o String newValue
+transaction CreateAccount {
+  --> Person personId
+  o AccountType type
+}
+
+transaction AddGroupMembership {
+  --> Account accountId
+  --> Group groupId
+}
+
+event Request {
+  o String personId
+  o String accountId
+  o String accountT
+  o String description
+  o String requestId
 }
