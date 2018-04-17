@@ -1,6 +1,6 @@
 {
   "name": "idmnetwork",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A network for simulating Identity and Access management in a blockchain environment",
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/idmnetwork.bna",
