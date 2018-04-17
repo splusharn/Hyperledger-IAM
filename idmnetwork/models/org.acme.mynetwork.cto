@@ -20,9 +20,9 @@ enum AccountType {
 
 asset Account identified by eruid {
   o String eruid
-  o AccountType type
+  o AccountType type optional
   o DateTime lastUpdate optional
-  --> Group[] memberOf
+  --> Group[] memberOf optional
   --> Person owner
 }
 

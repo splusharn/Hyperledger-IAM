@@ -24,6 +24,12 @@
  */
 async function AddGroupMembership(transaction) {
     // Update the asset with the new value.
+  	if(!transaction.groupId.members) {
+        transaction.groupId.members = [];
+    }
+  	if(!transaction.accountId.memberOf) {
+        transaction.accountId.memberOf = [];
+    }
     transaction.accountId.memberOf.push(transaction.groupId);
     transaction.groupId.members.push(transaction.accountId);
 
@@ -32,14 +38,14 @@ async function AddGroupMembership(transaction) {
     const groupRegistry = await getAssetRegistry('org.acme.mynetwork.Group');
     
     // Update the asset in the asset registry.
-    await accountRegistry.update(transaction.groupId);
-    await groupRegistry.update(transaction.accountId);
+    await accountRegistry.update(transaction.accountId);
+    await groupRegistry.update(transaction.groupId);
 
     // Emit an event for the modified asset.
     let event = getFactory().newEvent('org.acme.mynetwork', 'Request');
     event.personId = transaction.accountId.owner.uid;
     event.accountId = transaction.accountId.eruid;
-    event.accountT = transaction.accountId.accountType;
+    event.accountT = transaction.accountId.type;
     event.description = "A membership was added to the account";
     event.requestId = "1";
     emit(event);
@@ -51,7 +57,9 @@ async function AddGroupMembership(transaction) {
  * @transaction
  */
 async function CreateAccount(transaction) {
-    var account = getFactory().newResource(NS, 'Account', transaction.personId.uid);
+  	// Get the asset registry for the asset.
+    const accountRegistry = await getAssetRegistry('org.acme.mynetwork.Account');
+    var account = getFactory().newResource('org.acme.mynetwork', 'Account', transaction.personId);
     account.type = transaction.type;
     account.owner = transaction.personId;
 
@@ -59,12 +67,15 @@ async function CreateAccount(transaction) {
         account.owner.accounts = [];
     }
     account.owner.accounts.push(account);
+    return getAssetRegistry('org.acme.mynetwork.Account').then(function (assetRegistry) {
+        return assetRegistry.add(account);
+    });
 
     // Emit an event for the modified asset.
     let event = getFactory().newEvent('org.acme.mynetwork', 'Request');
     event.personId = transaction.accountId.owner.uid;
     event.accountId = transaction.accountId.eruid;
-    event.accountT = transaction.accountId.accountType;
+    event.accountT = transaction.accountId.type;
     event.description = "An account was added to the person";
     event.requestId = "1";
     emit(event);
