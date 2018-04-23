@@ -45,7 +45,7 @@ async function AddGroupMembership(transaction) {
     let event = getFactory().newEvent('org.acme.mynetwork', 'Request');
     event.personId = transaction.accountId.owner.uid;
     event.accountId = transaction.accountId.eruid;
-    event.accountT = transaction.accountId.type;
+    //vent.accountT = transaction.accountId.type;
     event.description = "A membership was added to the account";
     event.requestId = "1";
     emit(event);
@@ -59,14 +59,15 @@ async function AddGroupMembership(transaction) {
 async function CreateAccount(transaction) {
   	// Get the asset registry for the asset.
     const accountRegistry = await getAssetRegistry('org.acme.mynetwork.Account');
-    var account = getFactory().newResource('org.acme.mynetwork', 'Account', transaction.personId);
-    account.type = transaction.type;
+    var account = getFactory().newResource('org.acme.mynetwork', 'Account', transaction.personId.uid);
+    //account.type = transaction.type;
     account.owner = transaction.personId;
 
     if(!account.owner.accounts) {
         account.owner.accounts = [];
     }
     account.owner.accounts.push(account);
+  
     return getAssetRegistry('org.acme.mynetwork.Account').then(function (assetRegistry) {
         return assetRegistry.add(account);
     });
@@ -75,7 +76,7 @@ async function CreateAccount(transaction) {
     let event = getFactory().newEvent('org.acme.mynetwork', 'Request');
     event.personId = transaction.accountId.owner.uid;
     event.accountId = transaction.accountId.eruid;
-    event.accountT = transaction.accountId.type;
+    //event.accountT = transaction.accountId.type;
     event.description = "An account was added to the person";
     event.requestId = "1";
     emit(event);

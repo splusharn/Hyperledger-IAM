@@ -20,7 +20,6 @@ enum AccountType {
 
 asset Account identified by eruid {
   o String eruid
-  o AccountType type optional
   o DateTime lastUpdate optional
   --> Group[] memberOf optional
   --> Person owner
@@ -33,7 +32,6 @@ asset Group identified by groupName {
 
 transaction CreateAccount {
   --> Person personId
-  o AccountType type
 }
 
 transaction AddGroupMembership {
@@ -42,9 +40,8 @@ transaction AddGroupMembership {
 }
 
 event Request {
-  o String personId
-  o String accountId
-  o String accountT
-  o String description
-  o String requestId
+  o String personId optional
+  o String accountId optional
+  o String description optional
+  o String requestId optional
 }
