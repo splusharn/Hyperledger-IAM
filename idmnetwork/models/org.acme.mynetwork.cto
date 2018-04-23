@@ -12,12 +12,6 @@ participant Person identified by uid {
   o DateTime lastUpdate optional
 }
 
-enum AccountType {
-  o SLACK
-  o SERVICENOW
-  o ACTIVEDIRECTORY
-}
-
 asset Account identified by eruid {
   o String eruid
   o DateTime lastUpdate optional
