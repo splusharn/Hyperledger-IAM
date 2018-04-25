@@ -25,7 +25,7 @@ composer card list
 //2. cd idmnetwork
 npm install
 composer network install --card PeerAdmin@hlfv1 --archiveFile ./dist/idmnetwork.bna
-composer network upgrade --card PeerAdmin@hlfv1 --networkName idmnetwork --networkVersion 1.0.1
+composer network upgrade --card PeerAdmin@hlfv1 --networkName idmnetwork --networkVersion 1.0.2
 
 //Start commands
 (./downloadFabric.sh - downloads latest edition)
