@@ -45,9 +45,41 @@ async function AddGroupMembership(transaction) {
     let event = getFactory().newEvent('org.acme.mynetwork', 'Request');
     event.personId = transaction.accountId.owner.uid;
     event.accountId = transaction.accountId.eruid;
-    event.description = "A membership was added to the account";
+    event.description = "A group membership was added to the account";
     event.requestId = "1";
     emit(event);
+}
+
+/**
+ * Sample transaction
+ * @param {org.acme.mynetwork.AddRoleMembership} AddRoleMembership
+ * @transaction
+ */
+async function AddRoleMembership(transaction) {
+  // Update the asset with the new value.
+  if(!transaction.roleId.members) {
+      transaction.roleId.members = [];
+  }
+  if(!transaction.personId.memberOf) {
+      transaction.personId.memberOf = [];
+  }
+  transaction.personId.memberOf.push(transaction.roleId);
+  transaction.roleId.members.push(transaction.personId);
+
+  // Get the asset registry for the asset.
+  const participantRegistry = await getParticipantRegistry('org.acme.mynetwork.Person');
+  const roleRegistry = await getAssetRegistry('org.acme.mynetwork.Role');
+  
+  // Update the asset in the asset registry.
+  await participantRegistry.update(transaction.personId);
+  await roleRegistry.update(transaction.roleId);
+
+  // Emit an event for the modified asset.
+  let event = getFactory().newEvent('org.acme.mynetwork', 'Request');
+  event.personId = transaction.personId.uid;
+  event.description = "A role membership was added to the person";
+  event.requestId = "1";
+  emit(event);
 }
 
 /**
@@ -81,5 +113,48 @@ async function CreateAccount(transaction) {
       event.requestId = "1";
       emit(event);
     });
-      
+}
+
+/**
+ * Create a group
+ * @param {org.acme.mynetwork.CreateGroup} CreateGroup
+ * @transaction
+ */
+async function CreateGroup(transaction) {
+  // Get the asset registry for the asset.
+  const groupRegistry = await getAssetRegistry('org.acme.mynetwork.Group');
+  var group = getFactory().newResource('org.acme.mynetwork', 'Group', transaction.groupName);
+
+  return getAssetRegistry('org.acme.mynetwork.Group').then(function (assetRegistry) {
+      return assetRegistry.add(group);	
+  }).then(function() {
+    // Emit an event for the modified asset.
+    var event = getFactory().newEvent('org.acme.mynetwork', 'Request');
+    event.groupId = transaction.groupName;
+    event.description = "A Group asset was added";
+    event.requestId = "1";
+    emit(event);
+  });
+}
+
+/**
+ * Create a role
+ * @param {org.acme.mynetwork.CreateRole} CreateRole
+ * @transaction
+ */
+async function CreateRole(transaction) {
+  // Get the asset registry for the asset.
+  const roleRegistry = await getAssetRegistry('org.acme.mynetwork.Role');
+  var role = getFactory().newResource('org.acme.mynetwork', 'Role', transaction.roleName);
+
+  return getAssetRegistry('org.acme.mynetwork.Role').then(function (assetRegistry) {
+      return assetRegistry.add(role);	
+  }).then(function() {
+    // Emit an event for the modified asset.
+    var event = getFactory().newEvent('org.acme.mynetwork', 'Request');
+    event.roleId = transaction.roleName;
+    event.description = "A Role asset was added";
+    event.requestId = "1";
+    emit(event);
+  });    
 }
