@@ -2,6 +2,7 @@
 
 //Clear disk docker overlay allocation
 docker system prune -a -f
+docker rm -f $(docker ps -aq)
 
 //Install the network on the docker instance
 composer archive create  --sourceType dir --sourceName ./idmnetwork
@@ -16,6 +17,10 @@ composer network ping --card admin@idmnetwork
 composer network list --card admin@idmnetwork
 docker ps
 composer card list
+
+//To restart the REST server using the same options, issue the following command:
+   composer-rest-server -c admin@idmnetwork -n always -w true
+   composer-rest-server
 
 //Extract code from network
 //1.Extract .bna file
