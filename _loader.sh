@@ -35,4 +35,4 @@ else
  echo "FABRIC_START_TIMEOUT is set to '$FABRIC_START_TIMEOUT'"
 fi
 
-"${DIR}"/fabric-scripts/"${FABRIC_VERSION}"/"${THIS_SCRIPT}" "$@"
+"${DIR}"/fabric-scripts/"${THIS_SCRIPT}" "$@"

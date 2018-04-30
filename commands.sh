@@ -4,6 +4,13 @@
 docker system prune -a -f
 docker rm -f $(docker ps -aq)
 
+// Generate new crypto for the fabric
+cd "$(dirname "$0")"
+cryptogen generate --config=./crypto-config.yaml
+export FABRIC_CFG_PATH=$PWD
+configtxgen -profile ComposerOrdererGenesis -outputBlock ./composer-genesis.block
+configtxgen -profile ComposerChannel -outputCreateChannelTx ./composer-channel.tx -channelID composerchannel
+
 //Install the network on the docker instance
 composer archive create  --sourceType dir --sourceName ./idmnetwork
 composer network install --card PeerAdmin@hlfv1 --archiveFile idmnetwork@0.0.3.bna
