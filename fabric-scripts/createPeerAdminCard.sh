@@ -74,7 +74,9 @@ cat << EOF > /tmp/.connection.json
                 "orderer.example.com"
             ],
             "peers": {
-                "peer0.org1.example.com": {}
+                "peer0.org1.example.com": {},
+                "peer1.org1.example.com": {},
+                "peer2.org1.example.com": {}
             }
         }
     },
@@ -82,7 +84,9 @@ cat << EOF > /tmp/.connection.json
         "Org1": {
             "mspid": "Org1MSP",
             "peers": [
-                "peer0.org1.example.com"
+                "peer0.org1.example.com",
+                "peer1.org1.example.com",
+                "peer2.org1.example.com"
             ],
             "certificateAuthorities": [
                 "ca.org1.example.com"
