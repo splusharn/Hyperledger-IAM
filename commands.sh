@@ -13,17 +13,21 @@ configtxgen -profile ComposerChannel -outputCreateChannelTx ./composer-channel.t
 
 //Install the network on the docker instance
 composer archive create  --sourceType dir --sourceName ./idmnetwork
-composer network install --card PeerAdmin@hlfv1 --archiveFile idmnetwork@0.0.3.bna
-composer network start --card PeerAdmin@hlfv1 --networkAdmin admin --networkAdminEnrollSecret adminpw --networkName idmnetwork --networkVersion 0.0.3
+composer network install --card PeerAdmin@hlfv1 --archiveFile idmnetwork@1.0.4.bna
+composer network start --card PeerAdmin@hlfv1 --networkAdmin admin --networkAdminEnrollSecret adminpw --networkName idmnetwork --networkVersion 1.0.4
 
 //Start the network
 composer network start --card PeerAdmin@hlfv1 --networkAdmin admin --networkAdminEnrollSecret adminpw --networkName idmnetwork --networkVersion 1.0.0
 
 //Check that all is running
+composer card import -f admin@idmnetwork.card
 composer network ping --card admin@idmnetwork
 composer network list --card admin@idmnetwork
 docker ps
 composer card list
+
+//Create admin card for second peer
+composer card create --file admin@idmnetwork.card --businessNetworkName idmnetwork --connectionProfileFile connection.json --user admin --enrollSecret adminpw
 
 //To restart the REST server using the same options, issue the following command:
    composer-rest-server -c admin@idmnetwork -n always -w true
@@ -53,8 +57,11 @@ composer participant add --card admin@idmnetwork --data '{"$class":"org.acme.myn
 
 //Submit a transaction
 composer transaction submit --card admin@idmnetwork --data '{"$class":"org.acme.mynetwork.CreateAccount","personId":"ABC"}'
+
 composer transaction submit --card admin@idmnetwork --data '{"$class":"org.acme.mynetwork.CreateRole","roleName":"ABC"}'
+
 composer transaction submit --card admin@idmnetwork --data '{"$class":"org.acme.mynetwork.CreateGroup","groupName":"ABC"}'
+
 
 composer transaction submit --card admin@idmnetwork --data '{"$class":"org.acme.mynetwork.AddGroupMembership","accountId":"ABC","groupId":"ABC"}'
 composer transaction submit --card admin@idmnetwork --data '{"$class":"org.acme.mynetwork.AddRoleMembership","personId":"ABC","roleId":"ABC"}'
