@@ -27,6 +27,8 @@ services:
         - ./crypto-config/peerOrganizations/org1.example.com/users:/etc/hyperledger/msp/users
     depends_on:
       - couchdb2
+    extra_hosts:
+      - "orderer.example.com:192.168.10.132"
   couchdb2:
     container_name: couchdb2
     image: ishangulhane/fabric-couchdb

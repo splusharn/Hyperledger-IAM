@@ -24,7 +24,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 #
 
-# ARCH=$ARCH docker-compose -f "${DIR}"/composer/docker-compose-peer2.yml down
+ARCH=$ARCH docker-compose -f "${DIR}"/composer/docker-compose-peer2.yml down
 ARCH=$ARCH docker-compose -f "${DIR}"/composer/docker-compose-peer2.yml up -d
 
 # wait for Hyperledger Fabric to start
