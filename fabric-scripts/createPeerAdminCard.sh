@@ -64,8 +64,8 @@ cat << EOF > /tmp/.connection.json
         },
         "peer2.org1.example.com":
         {
-            "url": "grpc://127.0.0.0.1:9051",
-            "eventUrl": "grpc://127.0.0.0.1:9053"
+            "url": "grpc://peer2.org1.example.com:9051",
+            "eventUrl": "grpc://peer2.org1.example.com:9053"
         }
     },
     "channels": {
