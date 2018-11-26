@@ -1,0 +1,120 @@
+USER     COMMAND                     COMMAND            PID %CPU %MEM
+jonte    node /home/jonte/.nvm/versi node            115342 82.0  1.5
+jonte    /home/jonte/SmartBear/SoapU java              6676  4.5  7.5
+root     peer node start             peer             40690  2.4  0.6
+root     peer node start             peer             40873  2.4  0.7
+jonte    /usr/lib/firefox/firefox -c Web Content      97871  2.4  3.0
+jonte    /snap/vscode/64/usr/share/c code              4188  1.5  4.0
+jonte    /usr/lib/firefox/firefox -c Web Content      58806  1.0  3.0
+USER     COMMAND                     COMMAND            PID %CPU %MEM
+jonte    node /home/jonte/.nvm/versi node            115406 70.0  0.8
+jonte    /home/jonte/SmartBear/SoapU java              6676  4.5  7.5
+root     peer node start             peer             40690  2.4  0.6
+root     peer node start             peer             40873  2.4  0.7
+jonte    /usr/lib/firefox/firefox -c Web Content      97871  2.4  3.0
+jonte    /snap/vscode/64/usr/share/c code              4188  1.5  4.1
+jonte    /usr/lib/firefox/firefox -c Web Content      58806  1.0  3.0
+USER     COMMAND                     COMMAND            PID %CPU %MEM
+jonte    node /home/jonte/.nvm/versi node            115428 48.0  1.5
+jonte    /home/jonte/SmartBear/SoapU java              6676  4.5  7.5
+root     peer node start             peer             40690  2.4  0.6
+root     peer node start             peer             40873  2.4  0.7
+jonte    /usr/lib/firefox/firefox -c Web Content      97871  2.4  3.0
+jonte    /snap/vscode/64/usr/share/c code              4188  1.5  4.1
+jonte    /usr/lib/firefox/firefox -c Web Content      58806  1.0  3.0
+USER     COMMAND                     COMMAND            PID %CPU %MEM
+jonte    node /home/jonte/.nvm/versi node            115473 67.3  1.5
+jonte    /home/jonte/SmartBear/SoapU java              6676  4.5  7.5
+root     peer node start             peer             40690  2.4  0.6
+root     peer node start             peer             40873  2.4  0.7
+jonte    /usr/lib/firefox/firefox -c Web Content      97871  2.4  3.0
+jonte    /snap/vscode/64/usr/share/c code              4188  1.5  4.1
+jonte    /usr/lib/firefox/firefox -c Web Content      58806  1.0  3.0
+USER     COMMAND                     COMMAND            PID %CPU %MEM
+jonte    node /home/jonte/.nvm/versi node            115527 89.0  1.5
+jonte    /home/jonte/SmartBear/SoapU java              6676  4.5  7.5
+root     peer node start             peer             40690  2.4  0.6
+root     peer node start             peer             40873  2.4  0.7
+jonte    /usr/lib/firefox/firefox -c Web Content      97871  2.4  3.0
+jonte    /snap/vscode/64/usr/share/c code              4188  1.5  4.1
+jonte    /usr/lib/firefox/firefox -c Web Content      58806  1.0  3.0
+USER     COMMAND                     COMMAND            PID %CPU %MEM
+jonte    node /home/jonte/.nvm/versi node            115549 55.4  1.5
+jonte    /home/jonte/SmartBear/SoapU java              6676  4.5  7.5
+root     peer node start             peer             40690  2.4  0.7
+root     peer node start             peer             40873  2.4  0.7
+jonte    /usr/lib/firefox/firefox -c Web Content      97871  2.4  3.0
+jonte    /snap/vscode/64/usr/share/c code              4188  1.5  4.1
+jonte    /usr/lib/firefox/firefox -c Web Content      58806  1.0  3.0
+USER     COMMAND                     COMMAND            PID %CPU %MEM
+jonte    node /home/jonte/.nvm/versi node            115598 65.0  1.5
+jonte    /home/jonte/SmartBear/SoapU java              6676  4.5  7.5
+root     peer node start             peer             40690  2.4  0.7
+root     peer node start             peer             40873  2.4  0.7
+jonte    /usr/lib/firefox/firefox -c Web Content      97871  2.4  3.0
+jonte    /snap/vscode/64/usr/share/c code              4188  1.5  4.1
+jonte    /usr/lib/firefox/firefox -c Web Content      58806  1.0  3.0
+USER     COMMAND                     COMMAND            PID %CPU %MEM
+jonte    node /home/jonte/.nvm/versi node            115644 95.5  1.5
+jonte    /home/jonte/SmartBear/SoapU java              6676  4.5  7.5
+root     peer node start             peer             40690  2.4  0.7
+root     peer node start             peer             40873  2.4  0.7
+jonte    /usr/lib/firefox/firefox -c Web Content      97871  2.4  3.0
+jonte    /snap/vscode/64/usr/share/c code              4188  1.6  4.1
+jonte    /usr/lib/firefox/firefox -c Web Content      58806  1.0  3.0
+USER     COMMAND                     COMMAND            PID %CPU %MEM
+jonte    node /home/jonte/.nvm/versi node            115699  118  1.3
+jonte    /home/jonte/SmartBear/SoapU java              6676  4.5  7.5
+root     peer node start             peer             40690  2.4  0.7
+root     peer node start             peer             40873  2.4  0.7
+jonte    /usr/lib/firefox/firefox -c Web Content      97871  2.4  3.0
+jonte    /snap/vscode/64/usr/share/c code              4188  1.6  4.1
+jonte    /usr/lib/firefox/firefox -c Web Content      58806  1.0  3.0
+USER     COMMAND                     COMMAND            PID %CPU %MEM
+jonte    /home/jonte/SmartBear/SoapU java              6676  4.5  7.5
+root     peer node start             peer             40690  2.4  0.7
+root     peer node start             peer             40873  2.4  0.7
+jonte    /usr/lib/firefox/firefox -c Web Content      97871  2.4  3.0
+jonte    /snap/vscode/64/usr/share/c code              4188  1.6  4.1
+jonte    /usr/lib/firefox/firefox -c Web Content      58806  1.0  3.0
+root     /usr/lib/xorg/Xorg -core :0 Xorg              1471  0.6  2.4
+USER     COMMAND                     COMMAND            PID %CPU %MEM
+jonte    node /home/jonte/.nvm/versi node            115765 62.6  1.5
+jonte    /home/jonte/SmartBear/SoapU java              6676  4.5  7.5
+root     peer node start             peer             40690  2.4  0.7
+root     peer node start             peer             40873  2.4  0.7
+jonte    /usr/lib/firefox/firefox -c Web Content      97871  2.4  3.0
+jonte    /snap/vscode/64/usr/share/c code              4188  1.6  4.1
+jonte    /usr/lib/firefox/firefox -c Web Content      58806  1.0  3.0
+USER     COMMAND                     COMMAND            PID %CPU %MEM
+jonte    node /home/jonte/.nvm/versi node            115812 97.5  1.5
+jonte    /home/jonte/SmartBear/SoapU java              6676  4.5  7.5
+root     peer node start             peer             40690  2.4  0.7
+root     peer node start             peer             40873  2.4  0.7
+jonte    /usr/lib/firefox/firefox -c Web Content      97871  2.4  3.0
+jonte    /snap/vscode/64/usr/share/c code              4188  1.6  4.1
+jonte    /usr/lib/firefox/firefox -c Web Content      58806  1.0  3.0
+USER     COMMAND                     COMMAND            PID %CPU %MEM
+jonte    node /home/jonte/.nvm/versi node            115866  166  1.5
+jonte    /home/jonte/SmartBear/SoapU java              6676  4.5  7.5
+root     peer node start             peer             40690  2.4  0.7
+root     peer node start             peer             40873  2.4  0.7
+jonte    /usr/lib/firefox/firefox -c Web Content      97871  2.4  3.0
+jonte    /snap/vscode/64/usr/share/c code              4188  1.6  4.1
+jonte    /usr/lib/firefox/firefox -c Web Content      58806  1.0  3.0
+USER     COMMAND                     COMMAND            PID %CPU %MEM
+jonte    /home/jonte/SmartBear/SoapU java              6676  4.5  7.5
+root     peer node start             peer             40690  2.4  0.7
+root     peer node start             peer             40873  2.4  0.7
+jonte    /usr/lib/firefox/firefox -c Web Content      97871  2.4  3.0
+jonte    /snap/vscode/64/usr/share/c code              4188  1.6  4.1
+jonte    /usr/lib/firefox/firefox -c Web Content      58806  1.0  3.0
+root     /usr/lib/xorg/Xorg -core :0 Xorg              1471  0.6  2.4
+USER     COMMAND                     COMMAND            PID %CPU %MEM
+jonte    node /home/jonte/.nvm/versi node            115933 65.0  1.5
+jonte    /home/jonte/SmartBear/SoapU java              6676  4.5  7.5
+root     peer node start             peer             40690  2.4  0.7
+root     peer node start             peer             40873  2.4  0.7
+jonte    /usr/lib/firefox/firefox -c Web Content      97871  2.4  3.0
+jonte    /snap/vscode/64/usr/share/c code              4188  1.6  4.1
+jonte    /usr/lib/firefox/firefox -c Web Content      58806  1.0  3.0
