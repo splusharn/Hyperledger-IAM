@@ -1,3 +1,0 @@
-Test Step,min,max,avg,last,cnt,tps,bytes,bps,err,rat
-CreateGroup request,793,8639,2829.56,1156,831,6.92,1159388,9658,0,0
-TestCase:,793,8639,2829.56,1156,831,6.92,1159388,9658,0,0
