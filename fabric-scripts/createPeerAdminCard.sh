@@ -66,6 +66,11 @@ cat << EOF > /tmp/.connection.json
         {
             "url": "grpc://peer2.org1.example.com:9051",
             "eventUrl": "grpc://peer2.org1.example.com:9053"
+        },
+        "peer3.org1.example.com":
+        {
+            "url": "grpc://localhost:8051",
+            "eventUrl": "grpc://localhost:8053"
         }
     },
     "channels": {
@@ -76,7 +81,8 @@ cat << EOF > /tmp/.connection.json
             "peers": {
                 "peer0.org1.example.com": {},
                 "peer1.org1.example.com": {},
-                "peer2.org1.example.com": {}
+                "peer2.org1.example.com": {},
+                "peer3.org1.example.com": {}
             }
         }
     },
@@ -86,7 +92,8 @@ cat << EOF > /tmp/.connection.json
             "peers": [
                 "peer0.org1.example.com",
                 "peer1.org1.example.com",
-                "peer2.org1.example.com"
+                "peer2.org1.example.com",
+                "peer3.org1.example.com"
             ],
             "certificateAuthorities": [
                 "ca.org1.example.com"

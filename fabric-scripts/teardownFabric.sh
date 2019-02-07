@@ -19,6 +19,7 @@ rm -rf ~/.composer-connection-profiles/hlfv1
 rm -f ~/.composer-credentials/*
 
 # remove chaincode docker images
+docker system prune -a -f
 # docker rmi $(docker images dev-* -q)
 
 # Your system is now clean

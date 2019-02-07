@@ -1,0 +1,28 @@
+   PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
+121683 jonte     20   0   51800   5352   3464 R 52,6  0,1   0:00.13 top -b -c +
+  2457 jonte     20   0 1567984 190872  49140 R 36,8  2,5  22:34.82 compiz
+  3513 jonte     20   0 1596044 137884  71568 S 26,3  1,8  10:28.05 /snap/vsco+
+  3554 jonte     20   0  607352 106888  56752 S 26,3  1,4  15:54.93 /snap/vsco+
+  4188 jonte     20   0 1558780 317564  68360 S 26,3  4,2  29:36.06 /snap/vsco+
+  1471 root      20   0  709496 158676  85496 S 15,8  2,1  19:56.57 /usr/lib/x+
+  4190 jonte     20   0 1558780 317564  68360 S 15,8  4,2   6:38.30 /snap/vsco+
+  4192 jonte     20   0 1558780 317564  68360 S 10,5  4,2  11:14.23 /snap/vsco+
+  3549 jonte     20   0 1596044 137884  71568 S  5,3  1,8   4:17.09 /snap/vsco+
+  3558 jonte     20   0  607352 106888  56752 S  5,3  1,4   4:07.76 /snap/vsco+
+  4196 jonte     20   0 1558780 317564  68360 S  5,3  4,2   1:02.83 /snap/vsco+
+  4721 jonte     20   0 1072952 148100  32620 S  5,3  2,0   0:13.18 /snap/vsco+
+  6902 jonte     20   0 6443996 564288  49576 R  5,3  7,4  61:30.28 /home/jont+
+   PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
+121729 jonte     20   0   51800   5320   3428 R 11,1  0,1   0:00.04 top -b -c +
+ 40793 root      20   0  549948  43828  10044 S  5,6  0,6  14:23.66 peer node +
+     1 root      20   0  185524   5780   3732 S  0,0  0,1   0:17.62 /sbin/init+
+     2 root      20   0       0      0      0 S  0,0  0,0   0:00.06 [kthreadd]
+     4 root       0 -20       0      0      0 S  0,0  0,0   0:00.00 [kworker/0+
+     6 root       0 -20       0      0      0 S  0,0  0,0   0:00.00 [mm_percpu+
+     7 root      20   0       0      0      0 S  0,0  0,0   0:05.39 [ksoftirqd+
+     8 root      20   0       0      0      0 S  0,0  0,0   2:18.98 [rcu_sched]
+     9 root      20   0       0      0      0 S  0,0  0,0   0:00.00 [rcu_bh]
+    10 root      rt   0       0      0      0 S  0,0  0,0   0:00.10 [migration+
+    11 root      rt   0       0      0      0 S  0,0  0,0   0:00.41 [watchdog/+
+    12 root      20   0       0      0      0 S  0,0  0,0   0:00.00 [cpuhp/0]
+    13 root      20   0       0      0      0 S  0,0  0,0   0:00.00 [cpuhp/1]
