@@ -12,11 +12,12 @@ configtxgen -profile ComposerOrdererGenesis -outputBlock ./composer-genesis.bloc
 configtxgen -profile ComposerChannel -outputCreateChannelTx ./composer-channel.tx -channelID composerchannel
 
 //Extend num peers
-cd "$(dirname "$0")"
+//cd "$(dirname "$0")"
+cd /home/jonte/fabric-tools/fabric-scripts/composer
 ./cryptogen extend --config=./crypto-config.yaml
 export FABRIC_CFG_PATH=$PWD
-configtxgen -profile ComposerOrdererGenesis -outputBlock ./composer-genesis.block
-configtxgen -profile ComposerChannel -outputCreateChannelTx ./composer-channel.tx -channelID composerchannel
+./configtxgen -profile ComposerOrdererGenesis -outputBlock ./composer-genesis.block
+./configtxgen -profile ComposerChannel -outputCreateChannelTx ./composer-channel.tx -channelID composerchannel
 
 //Install the network on the docker instance
 composer archive create  --sourceType dir --sourceName ./idmnetwork

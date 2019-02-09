@@ -69,8 +69,8 @@ cat << EOF > /tmp/.connection.json
         },
         "peer3.org1.example.com":
         {
-            "url": "grpc://localhost:8051",
-            "eventUrl": "grpc://localhost:8053"
+            "url": "grpc://localhost:9051",
+            "eventUrl": "grpc://localhost:9053"
         }
     },
     "channels": {
